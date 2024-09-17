@@ -1,5 +1,8 @@
 # gitkeep
-!*/.gitkeep
+!/**/.gitkeep
 
 # Dependency directories
 node_modules/
+
+# media
+media/beats/*
