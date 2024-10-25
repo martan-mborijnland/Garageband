@@ -1,17 +1,18 @@
-function createRows(container, rows, columns) {
-    for (let i = 0; i < rows; i++) {
-        const row = document.createElement('div');
-        row.classList.add('row');
-        container.appendChild(row);
-        for (let j = 0; j < columns; j++) {
-            const cell = document.createElement('div');
-            cell.classList.add('cell');
-            row.appendChild(cell);
-        }
-    }
+import SoundCard from "./classes/SoundCard.js";
+import AppInterface from "./classes/AppInterface.js";
+
+
+
+async function main() {
+    const appInterface = new AppInterface({
+        container: document.querySelector('.container'),
+        tracks: [
+            "media/beats/8-Bit (1).mp3",
+            "media/beats/8-Bit (2).mp3",
+            "media/beats/Rapsfx1.mp3",
+            "media/beats/Rapsfx17.mp3"
+        ]
+    });
 }
 
-window.addEventListener('load', () => {
-    const container = document.querySelector('.container');
-    createRows(container, 4, 16);
-});
+main();

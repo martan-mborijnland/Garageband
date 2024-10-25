@@ -9,6 +9,10 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -17,17 +21,65 @@ body {
     display: flex;
     flex-direction: column;
 
+    padding: 16px 32px;
+    border-radius: 8px;
+    
+    /* CSS method to make text unselectable */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+
+    .playButton {
+        height: 50px;
+        width: 180px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
     .row {
         height: 100px;
 
         display: flex;
         flex-direction: row;
+
+        .rowHeader {
+            border: 1px solid white;
+            color: white;
+            font-size: 20px;
+            cursor: move;
+            width: 200px;
+
+            overflow-wrap: break-word;
+
+            padding: 0 8px;
+        }  
         
         .cell {
-            outline: 1px solid white;
-
-            min-width: 100px;
+            border: 1px solid #FFF2;
             height: 100%;
         }
+
+        .cell[playing="true"] {
+            background-color: #FFF2;
+        }
+    }
+}
+
+.waveform {
+    height: 100%;
+    width: 100%;
+    
+    .canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
     }
 }
